@@ -1,0 +1,459 @@
+body {
+  background: #2e7e6c;
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+.flip-card-container {
+  perspective: 1000px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.flip-card {
+  width: 100%;
+  min-width: 0;
+  height: 340px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px #0007;
+  background: #161616;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.flip-card-front .work-card-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin: 18px 0 6px 0;
+  color: #fff;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.flip-card-front .work-card-desc {
+  font-size: 0.97rem;
+  color: #cfcfcf;
+  padding: 0 16px 10px 16px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, #5b5b69 70%, #222 100%);
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back-content {
+  padding: 20px 18px;
+  text-align: center;
+}
+
+.work-back-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.work-back-link {
+  display: inline-block;
+  margin-top: 19px;
+  color: #ffde59;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 1rem;
+  transition: color 0.19s;
+}
+
+.work-back-link:hover {
+  color: #fff;
+  background: #ffde5950;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .flip-card, .flip-card-container {
+    height: 300px;
+  }
+  .flip-card-front img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-card, .flip-card-container {
+    height: 240px;
+  }
+  .flip-card-front img {
+    height: 90px;
+  }
+}
+.main-content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.header {
+  padding: 44px 0 36px 0;
+}
+
+.main-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.3em 0;
+}
+
+.subtitle {
+  font-size: 1.45rem;
+  margin-bottom: 36px;
+  color: #dadada;
+  letter-spacing: 0.13em;
+}
+
+.header-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 38px #0008;
+  background: #191919;
+}
+
+.header-info {
+  margin-top: 8px;
+}
+
+.header-services {
+  font-size: 1.07rem;
+  color: #eee;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.header-link {
+  display: inline-block;
+  color: #fff;
+  border-bottom: 1.5px solid #fff;
+  font-size: 1.13rem;
+  margin-top: 9px;
+  letter-spacing: 0.06em;
+  transition: color 0.18s;
+}
+.header-link:hover {
+  color: #ffde59;
+  border-bottom-color: #ffde59;
+}
+
+.enhanced-philosophy {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 48px;
+  align-items: center;
+  margin: 60px 0 70px 0;
+  position: relative;
+}
+
+.philosophy-visual {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.philosophy-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 180px; height: 180px;
+  z-index: 0;
+}
+
+.philosophy-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 4rem;
+  color: #1e90ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 14px #7fffd4a2);
+}
+
+.philosophy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.philosophy-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25em;
+  letter-spacing: 0.01em;
+}
+
+.philosophy-quote {
+  display: block;
+  font-size: 1.18rem;
+  font-style: italic;
+  color: #7fffd4;
+  margin-bottom: 0.7em;
+  line-height: 1.5;
+}
+
+.philosophy-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 0.8em 0;
+}
+.philosophy-list li {
+  font-size: 1.04rem;
+  margin-bottom: 0.42em;
+  color: #e2e2e2;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.philosophy-list strong {
+  color: #cab76a;
+  font-weight: 700;
+}
+
+.philosophy-highlight {
+  background: linear-gradient(90deg, #7fffd4 10%, #1e90ff 90%);
+  color: #232428;
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 7px 17px;
+  border-radius: 30px;
+  width: fit-content;
+  box-shadow: 0 2px 12px #1e90ff22;
+  margin-top: 0.6em;
+}
+
+@media (max-width: 800px) {
+  .enhanced-philosophy {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+    justify-items: center;
+  }
+  .philosophy-content {
+    align-items: center;
+  }
+  .philosophy-title { font-size: 1.4rem; }
+  .philosophy-visual { margin: 0 auto; }
+  .philosophy-highlight { margin-left: auto; margin-right: auto; }
+}
+.philosophy-title {
+  font-size: 2.2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+  line-height: 1.1;
+  color: #fff;
+}
+.philosophy-desc {
+  font-size: 1.09rem;
+  color: #d0d0d0;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.work-section {
+  margin: 40px 0 80px 0;
+}
+.work-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.05rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+  gap: 34px;
+  margin-bottom: 44px;
+}
+.work-card {
+  background: #161616;
+  border-radius: 9px;
+  overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+  box-shadow: 0 4px 20px #0006;
+  cursor: pointer;
+}
+.work-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(22%) brightness(0.98);
+  transition: filter 0.19s, transform 0.19s;
+}
+.work-card:hover img {
+  filter: none;
+  transform: scale(1.07);
+}
+.work-card-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.17rem;
+  font-weight: 700;
+  margin: 18px 0 6px 0;
+  color: #fff;
+  padding-left: 16px;
+}
+.work-card-desc {
+  font-size: 0.97rem;
+  color: #cfcfcf;
+  padding: 0 0 15px 16px;
+  line-height: 1.45;
+}
+.work-quote {
+  margin-top: 56px;
+  font-size: 2.05rem;
+  text-align: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.work-quote .italic {
+  font-style: italic;
+  color: #ffde59;
+}
+
+.whatido-section {
+  margin: 70px 0 80px 0;
+}
+.whatido-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+.whatido-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 44px;
+}
+.whatido-heading {
+  font-size: 1.13rem;
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.whatido-desc {
+  font-size: 1.01rem;
+  color: #e2e2e2;
+  line-height: 1.5;
+}
+
+.contact-section {
+  margin: 75px 0 50px 0;
+}
+.contact-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.contact-flex {
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.contact-info {
+  min-width: 250px;
+  font-size: 1.07rem;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+.contact-info a {
+  color: #ffde59;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-line {
+  margin-top: 10px;
+}
+.profile-img-bottom {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 32px #0008;
+  background: #191919;
+}
+
+@media (max-width: 900px) {
+  .main-title { font-size: 2.2rem; }
+  .header-flex { flex-direction: column; align-items: stretch; }
+  .philosophy-section { grid-template-columns: 1fr; gap: 24px;}
+  .work-grid, .whatido-grid, .contact-flex { grid-template-columns: 1fr; flex-direction: column;}
+}
+@media (max-width: 600px) {
+  .main-title { font-size: 1.4rem; }
+  .philosophy-title, .work-title, .contact-title { font-size: 1.21rem; }
+  .work-quote { font-size: 1.1rem; }
+  .profile-img, .profile-img-bottom { width: 110px; height: 110px; }
+}
