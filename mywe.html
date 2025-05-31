@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kavee Aewra | Web Developer</title>
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"/>
+  <style>
+    /* Example header box styling */
+    .header-box {
+      margin: 36px auto 0 auto;
+      max-width: 6000px;
+      background: linear-gradient(90deg, #588174 0%, #235a53 100%);
+      border-radius: 1.3rem;
+      box-shadow: 0 6px 32px 0 rgba(30, 144, 255, 0.13);
+      padding: 2rem 2rem 1.8rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #16213e;
+      font-family: 'Montserrat', 'Roboto', sans-serif;
+      position: relative;
+      z-index: 3;
+      
+    }
+    .header-box h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.7rem 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(30,144,255,0.13);
+    }
+    .header-box .subtitle {
+      font-size: 1.25rem;
+      color: #e1f7ff;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: cover) {
+      .header-box {
+        padding: 1.3rem 0.7rem;
+        max-width: 98vw;
+      }
+      .header-box h1 {
+        font-size: 1.4rem;
+      }
+      .header-box .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"/>
 </head>
+
 <body>
   <main class="main-content">
     <!-- Header -->
-    <header class="header">
-      <div>
-        <h1 class="main-title">KAVEE AEWRA</h1>
-        <div class="subtitle">Web Developer</div>
-      </div>
+    <div class="header-box">
+    <h1>KAVEE AEWRA</h1>
+    <div class="subtitle">Web Developer</div>
+  </div>
       <div class="header-flex">
-        <img src="r.jpeg" alt="Kavee Aewra" class="profile-img"/>
+        <img src="u.png" alt="Kavee Aewra" class="profile-img"/>
         <div class="header-info">
           <div class="header-services">
             Modern Websites / UI Development<br>
@@ -29,42 +78,238 @@
       </div>
     </header>
 
-  <section class="philosophy-section enhanced-philosophy">
-  <div class="philosophy-visual">
-    <svg class="philosophy-svg" viewBox="0 0 180 180" fill="none">
-      <defs>
-        <linearGradient id="philosophyGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#7fffd4"/>
-          <stop offset="1" stop-color="#1e90ff"/>
-        </linearGradient>
-      </defs>
-      <circle cx="90" cy="90" r="80" fill="url(#philosophyGradient)" opacity="0.12"/>
-      <circle cx="60" cy="60" r="38" fill="url(#philosophyGradient)" opacity="0.18"/>
-      <rect x="40" y="120" width="100" height="20" rx="10" fill="url(#philosophyGradient)" opacity="0.15"/>
-    </svg>
-    <div class="philosophy-icon">
-      <span>🌐</span>
-    </div>
-  </div>
-  <div class="philosophy-content">
-    <div class="philosophy-title">My Web Philosophy</div>
-    <div class="philosophy-desc">
-      <q class="philosophy-quote">
-        The web is my canvas, and every project is a unique opportunity to craft something meaningful.
-      </q>
-      <ul class="philosophy-list">
-        <li>✨ <strong>Custom-crafted:</strong> Every website should reflect its owner's individuality.</li>
-        <li>⚡ <strong>Fast & Beautiful:</strong> Speed and aesthetics go hand-in-hand for a memorable experience.</li>
-        <li>🎨 <strong>Immersive UI:</strong> Engaging layouts and smooth animations captivate users.</li>
-        <li>🧭 <strong>Seamless Journeys:</strong> Effortless navigation and clarity at every step.</li>
-        <li>🚀 <strong>No project is too small for impact.</strong></li>
-      </ul>
-      <div class="philosophy-highlight">
-        <span>Every brand deserves to stand out online.</span>
+ <!--
+3-grid horizontal layout with unique background colors per section.
+Each section "pops up" on hover. Fully responsive.
+-->
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.philosophy-section {
+  border-radius: 1.5rem;
+box-shadow: 5px 6px 32px 0 rgb(181, 204, 202);
+  transition:
+    transform 0.3s cubic-bezier(.23,1.01,.32,1),
+    box-shadow 0.3s cubic-bezier(.23,1.01,.32,1),
+    z-index 0s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 420px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.philosophy-section.one {
+  background: #84a97e; /* teal/green */
+}
+.philosophy-section.two {
+  background: #126870; /* light orange/yellow */
+}
+.philosophy-section.three {
+  background: #84a97e; /* light pink/red */
+}
+
+.philosophy-section:hover,
+.philosophy-section:focus-within {
+  transform: scale(1.06) translateY(-12px);
+  box-shadow: 0 12px 48px 0 rgba(30, 144, 255, 0.19);
+  z-index: 10;
+}
+
+.philosophy-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+  position: relative;
+}
+
+.philosophy-svg {
+  width: 92px;
+  height: 92px;
+}
+
+.philosophy-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.philosophy-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #d9e1e8;
+  letter-spacing: 0.03em;
+}
+
+.philosophy-desc {
+  font-size: 1rem;
+  color: #222;
+  font-weight: bold;
+}
+
+.philosophy-quote {
+  display: block;
+  font-style: italic;
+  font-size: 1.08em;
+  margin-bottom: 1em;
+  color: #0c0d0e;
+}
+
+.philosophy-list {
+  margin: 0 0 1.2em 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.philosophy-list li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.philosophy-highlight {
+  margin-top: 1em;
+  font-weight: 600;
+  color: #1565c0;
+  background: linear-gradient(90deg, #7fffd4 0%, #1e90ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .philosophy-section {
+    min-height: 0;
+  }
+}
+</style>
+
+<div class="grid-container">
+  <section class="philosophy-section one">
+    <div class="philosophy-visual">
+      <svg class="philosophy-svg" viewBox="0 0 180 180" fill="none">
+        <defs>
+          <linearGradient id="philosophyGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#7fffd4"/>
+            <stop offset="1" stop-color="#1e90ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="90" cy="90" r="80" fill="url(#philosophyGradient)" opacity="0.12"/>
+        <circle cx="60" cy="60" r="38" fill="url(#philosophyGradient)" opacity="0.18"/>
+        <rect x="40" y="120" width="100" height="20" rx="10" fill="url(#philosophyGradient)" opacity="0.15"/>
+      </svg>
+      <div class="philosophy-icon">
+        <span>🌐</span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="philosophy-content">
+      <div class="philosophy-title">My Web Philosophy</div>
+      <div class="philosophy-desc">
+        <q class="philosophy-quote">
+          The web is my canvas, and every project is a unique opportunity to craft something meaningful.
+        </q>
+        <ul class="philosophy-list">
+          <li>✨ <strong>Custom-crafted:</strong> Every website should reflect its owner's individuality.</li>
+          <li>⚡ <strong>Fast & Beautiful:</strong> Speed and aesthetics go hand-in-hand for a memorable experience.</li>
+          <li>🎨 <strong>Immersive UI:</strong> Engaging layouts and smooth animations captivate users.</li>
+          <li>🧭 <strong>Seamless Journeys:</strong> Effortless navigation and clarity at every step.</li>
+          <li>🚀 <strong>No project is too small for impact.</strong></li>
+        </ul>
+        <div class="philosophy-highlight">
+          <span>Every brand deserves to stand out online.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="philosophy-section two">
+    <div class="philosophy-visual">
+      <svg class="philosophy-svg" viewBox="0 0 180 180" fill="none">
+        <defs>
+          <linearGradient id="philosophyGradient2" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ffb347"/>
+            <stop offset="1" stop-color="#ff5e62"/>
+          </linearGradient>
+        </defs>
+        <circle cx="90" cy="90" r="80" fill="url(#philosophyGradient2)" opacity="0.12"/>
+        <circle cx="60" cy="60" r="38" fill="url(#philosophyGradient2)" opacity="0.18"/>
+        <rect x="40" y="120" width="100" height="20" rx="10" fill="url(#philosophyGradient2)" opacity="0.15"/>
+      </svg>
+      <div class="philosophy-icon">
+        <span>💡</span>
+      </div>
+    </div>
+    <div class="philosophy-content">
+      <div class="philosophy-title">Creative Solutions</div>
+      <div class="philosophy-desc">
+        <q class="philosophy-quote">
+          Innovation starts with curiosity and thrives on experimentation.
+        </q>
+        <ul class="philosophy-list">
+          <li>🛠️ <strong>Problem-solving:</strong> Every challenge is an opportunity to create.</li>
+          <li>📈 <strong>Impact-driven:</strong> Results that matter, not just code that works.</li>
+          <li>🤝 <strong>Collaboration:</strong> Great ideas are built together.</li>
+          <li>🔄 <strong>Continuous learning:</strong> Tech evolves, so do we.</li>
+        </ul>
+        <div class="philosophy-highlight">
+          <span>Creativity fuels technical excellence.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="philosophy-section three">
+    <div class="philosophy-visual">
+      <svg class="philosophy-svg" viewBox="0 0 180 180" fill="none">
+        <defs>
+          <linearGradient id="philosophyGradient3" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#90f7ec"/>
+            <stop offset="1" stop-color="#32ccbc"/>
+          </linearGradient>
+        </defs>
+        <circle cx="90" cy="90" r="80" fill="url(#philosophyGradient3)" opacity="0.12"/>
+        <circle cx="60" cy="60" r="38" fill="url(#philosophyGradient3)" opacity="0.18"/>
+        <rect x="40" y="120" width="100" height="20" rx="10" fill="url(#philosophyGradient3)" opacity="0.15"/>
+      </svg>
+      <div class="philosophy-icon">
+        <span>🔒</span>
+      </div>
+    </div>
+    <div class="philosophy-content">
+      <div class="philosophy-title">Trust & Reliability</div>
+      <div class="philosophy-desc">
+        <q class="philosophy-quote">
+          Security and stability are the backbone of lasting digital experiences.
+        </q>
+        <ul class="philosophy-list">
+          <li>🔐 <strong>Privacy-focused:</strong> User data deserves respect and protection.</li>
+          <li>🧑‍💻 <strong>Maintainable:</strong> Code should be clean and easy to evolve.</li>
+          <li>🛡️ <strong>Reliable:</strong> Uptime and performance are non-negotiable.</li>
+          <li>📊 <strong>Transparent:</strong> Clear communication builds trust.</li>
+        </ul>
+        <div class="philosophy-highlight">
+          <span>Reliability earns user confidence.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
     <!-- Work -->
     <section class="work-section">

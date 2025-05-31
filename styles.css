@@ -134,9 +134,7 @@ body {
   padding: 0 18px;
 }
 
-.header {
-  padding: 44px 0 36px 0;
-}
+
 
 .main-title {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -196,124 +194,6 @@ body {
   border-bottom-color: #ffde59;
 }
 
-.enhanced-philosophy {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 48px;
-  align-items: center;
-  margin: 60px 0 70px 0;
-  position: relative;
-}
-
-.philosophy-visual {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.philosophy-svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 180px; height: 180px;
-  z-index: 0;
-}
-
-.philosophy-icon {
-  position: relative;
-  z-index: 1;
-  font-size: 4rem;
-  color: #1e90ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 2px 14px #7fffd4a2);
-}
-
-.philosophy-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.philosophy-title {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.25em;
-  letter-spacing: 0.01em;
-}
-
-.philosophy-quote {
-  display: block;
-  font-size: 1.18rem;
-  font-style: italic;
-  color: #7fffd4;
-  margin-bottom: 0.7em;
-  line-height: 1.5;
-}
-
-.philosophy-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 0.8em 0;
-}
-.philosophy-list li {
-  font-size: 1.04rem;
-  margin-bottom: 0.42em;
-  color: #e2e2e2;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-.philosophy-list strong {
-  color: #cab76a;
-  font-weight: 700;
-}
-
-.philosophy-highlight {
-  background: linear-gradient(90deg, #7fffd4 10%, #1e90ff 90%);
-  color: #232428;
-  font-size: 1.08rem;
-  font-weight: 600;
-  padding: 7px 17px;
-  border-radius: 30px;
-  width: fit-content;
-  box-shadow: 0 2px 12px #1e90ff22;
-  margin-top: 0.6em;
-}
-
-@media (max-width: 800px) {
-  .enhanced-philosophy {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-    justify-items: center;
-  }
-  .philosophy-content {
-    align-items: center;
-  }
-  .philosophy-title { font-size: 1.4rem; }
-  .philosophy-visual { margin: 0 auto; }
-  .philosophy-highlight { margin-left: auto; margin-right: auto; }
-}
-.philosophy-title {
-  font-size: 2.2rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  margin-bottom: 0.6em;
-  line-height: 1.1;
-  color: #fff;
-}
-.philosophy-desc {
-  font-size: 1.09rem;
-  color: #d0d0d0;
-  line-height: 1.7;
-  max-width: 600px;
-}
 
 .work-section {
   margin: 40px 0 80px 0;
